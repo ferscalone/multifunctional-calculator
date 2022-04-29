@@ -6,7 +6,8 @@ from PyQt5.QtSvg import QSvgWidget
 from sympy.printing.latex import latex
 from tex2svg import tex2svg
 
-#I. Главное окно
+
+# I. Главное окно
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -15,7 +16,7 @@ class MainWindow(QMainWindow):
     def initUI(self):
         self.setWindowTitle("The решатор")
         self.resize(910, 850)
-        #self.move(300, 300)
+        # self.move(300, 300)
 
         font = QFont()
         font.setPointSize(13)
@@ -64,7 +65,8 @@ class MainWindow(QMainWindow):
         self.qu_eq.show()
         self.hide()
 
-#II. Наборы функций по темам (прописать остававшиеся большие темы с переходами)
+
+# II. Наборы функций по темам (прописать остававшиеся большие темы с переходами)
 class Geometry(QWidget):
     def __init__(self):
         super().__init__()
@@ -73,8 +75,8 @@ class Geometry(QWidget):
     def initUI(self):
         self.setWindowTitle("Геометрия")
         self.resize(910, 850)
-        #self.move(300, 300)
-        
+        # self.move(300, 300)
+
         self.menu = QPushButton("В меню", self)
         self.menu.setGeometry(QRect(250, 20, 280, 100))
         self.menu.clicked.connect(self.go_mainwindow)
@@ -104,8 +106,9 @@ class Geometry(QWidget):
         self.mw.show()
         self.hide()
 
-    def open_informatika():
+    def open_informatika(self):
         pass
+
 
 class Trigonometric(QWidget):
     def __init__(self):
@@ -115,7 +118,7 @@ class Trigonometric(QWidget):
     def initUI(self):
         self.setWindowTitle("Тригонометрические функции")
         self.resize(910, 850)
-        #self.move(300, 300)
+        # self.move(300, 300)
 
         self.menu = QPushButton("В меню", self)
         self.menu.setGeometry(QRect(250, 20, 280, 100))
@@ -126,6 +129,7 @@ class Trigonometric(QWidget):
         self.mw.show()
         self.hide()
 
+
 class Informatika(QWidget):
     def __init__(self):
         super().__init__()
@@ -134,8 +138,8 @@ class Informatika(QWidget):
     def initUI(self):
         self.setWindowTitle("Информатика")
         self.resize(910, 850)
-        #self.move(300, 300)
-        
+        # self.move(300, 300)
+
         self.menu = QPushButton("В меню", self)
         self.menu.setGeometry(QRect(250, 20, 280, 100))
         self.menu.clicked.connect(self.go_mainwindow)
@@ -163,7 +167,8 @@ class Informatika(QWidget):
         self.mw.show()
         self.hide()
 
-#III. Реализуемые базовые функции (возможно некоторые будут включать ещё подклассы)
+
+# III. Реализуемые базовые функции (возможно некоторые будут включать ещё подклассы)
 
 ##Алгебра
 class QuadraticEquation(QWidget):
@@ -174,7 +179,7 @@ class QuadraticEquation(QWidget):
     def initUI(self):
         self.setWindowTitle("Квадратное уравнение")
         self.resize(910, 850)
-        #self.move(300, 300)
+        # self.move(300, 300)
 
         '''self.image = QLabel(self)
         self.image.setGeometry(QRect(0, 50, 50, 50))
@@ -218,23 +223,23 @@ class QuadraticEquation(QWidget):
             a = int(self.a.text())
             b = int(self.b.text())
             c = int(self.c.text())
-            D = b**2 - 4*a*c
-            if D < 0:      
+            D = b ** 2 - 4 * a * c
+            if D < 0:
                 self.label.setText("Решений нет!")
             elif D == 0:
-                resh = sympy.simplify(-b/(2*a))
+                resh = sympy.simplify(-b / (2 * a))
                 self.svg = QSvgWidget(self)
                 self.svg.load(tex2svg(latex(resh)))
                 self.svg.setGeometry(QRect(0, 50, 100, 100))
                 self.svg.show()
             else:
                 D = sympy.sqrt(D)
-                resh1 = sympy.simplify((-b + D)/(2*a))
-                resh2 = sympy.simplify((-b - D)/(2*a))
+                resh1 = sympy.simplify((-b + D) / (2 * a))
+                resh2 = sympy.simplify((-b - D) / (2 * a))
 
-                #обращай внимание на self, если с self, то надо очищать QLabel, например True
-                self.svg1 = QSvgWidget()              
-                self.svg1.load(tex2svg(latex(resh1)))               
+                # обращай внимание на self, если с self, то надо очищать QLabel, например True
+                self.svg1 = QSvgWidget()
+                self.svg1.load(tex2svg(latex(resh1)))
                 self.svg1.setGeometry(QRect(0, 50, 50, 30))
                 self.svg1.show()
 
@@ -248,6 +253,7 @@ class QuadraticEquation(QWidget):
         self.mw.show()
         self.hide()
 
+
 ##Информатика
 class Dvoich(QWidget):
     def __init__(self):
@@ -257,8 +263,8 @@ class Dvoich(QWidget):
     def initUI(self):
         self.setWindowTitle("Двоичный калькулятор")
         self.resize(910, 850)
-        #self.move(300, 300)
-        
+        # self.move(300, 300)
+
         self.menu = QPushButton("В меню", self)
         self.menu.setGeometry(QRect(250, 20, 280, 100))
         self.menu.clicked.connect(self.go_info)
@@ -267,6 +273,7 @@ class Dvoich(QWidget):
         self.mw = Informatika()
         self.mw.show()
         self.hide()
+
 
 class Perevod(QWidget):
     def __init__(self):
@@ -276,8 +283,8 @@ class Perevod(QWidget):
     def initUI(self):
         self.setWindowTitle("Перевод систем счисления")
         self.resize(910, 850)
-        #self.move(300, 300)
-        
+        # self.move(300, 300)
+
         self.menu = QPushButton("В меню", self)
         self.menu.setGeometry(QRect(250, 20, 280, 100))
         self.menu.clicked.connect(self.go_info)
@@ -286,6 +293,7 @@ class Perevod(QWidget):
         self.mw = Informatika()
         self.mw.show()
         self.hide()
+
 
 ##Геометрия
 class SquaresOfFigures(QWidget):
@@ -296,6 +304,7 @@ class SquaresOfFigures(QWidget):
     def initUI(self):
         pass
 
+
 ### SquaresOfFigures
 class FlatShapes(QWidget):
     def __init__(self):
@@ -304,6 +313,8 @@ class FlatShapes(QWidget):
 
     def initUI(self):
         pass
+
+
 class ThreeDimensionalFigures(QWidget):
     def __init__(self):
         super().__init__()
@@ -311,6 +322,8 @@ class ThreeDimensionalFigures(QWidget):
 
     def initUI(self):
         pass
+
+
 #### FlatShapes
 class Triangle(QWidget):
     def __init__(self):
