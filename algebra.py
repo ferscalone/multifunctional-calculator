@@ -1,5 +1,9 @@
 from modules import *
-from functions.algebra.quadratic_equations import Quadratic_Equations
+from classes.algebra.average_values import Average_Values
+from classes.algebra.arithmetic import Arithmetic
+from classes.algebra.equations import Equations
+from classes.algebra.progressions import Progressions
+from classes.algebra.combinatorics import Combinatorics
 
 class Algebra(QWidget):
     def __init__(self, parent_window):
@@ -15,29 +19,25 @@ class Algebra(QWidget):
         menu_button.setGeometry(QRect(250, 20, 280, 100))
         menu_button.clicked.connect(self.open_parent_window)
 
-        quadratic_equations_button = QPushButton("Квадратные уравнения", self)
-        quadratic_equations_button.setGeometry(QRect(250, 120, 280, 100))
-        quadratic_equations_button.clicked.connect(lambda: self.open_sub_window(Quadratic_Equations))
+        average_values_button = QPushButton("Средние величины", self)
+        average_values_button.setGeometry(QRect(250, 120, 280, 100))
+        average_values_button.clicked.connect(lambda: self.open_sub_window(Average_Values))
 
-        quadratic_equations_button = QPushButton("Средние величины", self)
-        quadratic_equations_button.setGeometry(QRect(250, 120, 280, 100))
-        quadratic_equations_button.clicked.connect(lambda: self.open_sub_window(Average_Values))
+        arithmetic_button = QPushButton("Арифметика", self)
+        arithmetic_button.setGeometry(QRect(250, 220, 280, 100))
+        arithmetic_button.clicked.connect(lambda: self.open_sub_window(Arithmetic))
 
-        quadratic_equations_button = QPushButton("Арифметика", self)
-        quadratic_equations_button.setGeometry(QRect(250, 120, 280, 100))
-        quadratic_equations_button.clicked.connect(lambda: self.open_sub_window(Arithmetic))
+        equations_button = QPushButton("Уравнения", self)
+        equations_button.setGeometry(QRect(250, 320, 280, 100))
+        equations_button.clicked.connect(lambda: self.open_sub_window(Equations))
 
-        quadratic_equations_button = QPushButton("Уравнения", self)
-        quadratic_equations_button.setGeometry(QRect(250, 120, 280, 100))
-        quadratic_equations_button.clicked.connect(lambda: self.open_sub_window(Equations))
+        progressions_button = QPushButton("Прогрессии", self)
+        progressions_button.setGeometry(QRect(250, 420, 280, 100))
+        progressions_button.clicked.connect(lambda: self.open_sub_window(Progressions))
 
-        quadratic_equations_button = QPushButton("Прогрессии", self)
-        quadratic_equations_button.setGeometry(QRect(250, 120, 280, 100))
-        quadratic_equations_button.clicked.connect(lambda: self.open_sub_window(Progressions))
-
-        quadratic_equations_button = QPushButton("Комбинаторика", self)
-        quadratic_equations_button.setGeometry(QRect(250, 120, 280, 100))
-        quadratic_equations_button.clicked.connect(lambda: self.open_sub_window(Combinatorics))
+        combinatorics_button = QPushButton("Комбинаторика", self)
+        combinatorics_button.setGeometry(QRect(250, 520, 280, 100))
+        combinatorics_button.clicked.connect(lambda: self.open_sub_window(Combinatorics))
 
     def open_parent_window(self):
         self.parent_window.show()
