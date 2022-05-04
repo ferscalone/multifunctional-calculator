@@ -1,5 +1,5 @@
 from modules import *
-from algebraic_functions.quadratic_equations import Quadratic_Equations
+from functions.algebra.quadratic_equations import Quadratic_Equations
 
 class Algebra(QWidget):
     def __init__(self, parent_window):
