@@ -3,6 +3,8 @@ from classes.algebra.arithmetic__.gcd_and_lmn import GCD_and_LMN
 from classes.algebra.arithmetic__.simplicity_and_factorization import Simplicity_And_Factorization
 from classes.algebra.arithmetic__.exponentiation import Exponentiation
 from classes.algebra.arithmetic__.root_extraction import Root_Extraction
+from classes.algebra.arithmetic__.sum_m_n import Sum_M_N
+
 
 class Arithmetic(QWidget):
     def __init__(self, parent_window):
@@ -33,6 +35,10 @@ class Arithmetic(QWidget):
         button = QPushButton("Извлечение корня", self)
         button.setGeometry(QRect(250, 420, 280, 100))
         button.clicked.connect(lambda: self.open_sub_window(Root_Extraction))
+
+        button = QPushButton("Сумма натуральных чисел от m до n", self)
+        button.setGeometry(QRect(250, 520, 280, 100))
+        button.clicked.connect(lambda: self.open_sub_window(Sum_M_N))
 
     def open_parent_window(self):
         self.parent_window.show()

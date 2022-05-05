@@ -1,28 +1,28 @@
 from modules import *
-from classes.algebra.progressions__.arithmetic import Arithmetic
-from classes.algebra.progressions__.geometric import Geometric
+from classes.algebra.calculus__.limit import Limit
+from classes.algebra.calculus__.derivative import Derivative
 
-class Progressions(QWidget):
+class Calculus(QWidget):
     def __init__(self, parent_window):
         super().__init__()
         self.initUI()
         self.parent_window = parent_window
 
     def initUI(self):
-        self.setWindowTitle("Прогрессии")
+        self.setWindowTitle("Немного из матанализа")
         self.resize(910, 850)
 
         back_button = QPushButton("Назад", self)
         back_button.setGeometry(QRect(250, 20, 280, 100))
         back_button.clicked.connect(self.open_parent_window)
 
-        button = QPushButton("Арифметические прогрессии", self)
+        button = QPushButton("Предел функции", self)
         button.setGeometry(QRect(250, 120, 280, 100))
-        button.clicked.connect(lambda: self.open_sub_window(Arithmetic))
+        button.clicked.connect(lambda: self.open_sub_window(Limit))
 
-        button = QPushButton("Геометрические прогрессии", self)
+        button = QPushButton("Производная функции", self)
         button.setGeometry(QRect(250, 220, 280, 100))
-        button.clicked.connect(lambda: self.open_sub_window(Geometric))
+        button.clicked.connect(lambda: self.open_sub_window(Derivative))
 
     def open_parent_window(self):
         self.parent_window.show()

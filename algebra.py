@@ -4,6 +4,7 @@ from classes.algebra.arithmetic import Arithmetic
 from classes.algebra.equations import Equations
 from classes.algebra.progressions import Progressions
 from classes.algebra.combinatorics import Combinatorics
+from classes.algebra.calculus import Calculus
 
 class Algebra(QWidget):
     def __init__(self, parent_window):
@@ -38,6 +39,10 @@ class Algebra(QWidget):
         combinatorics_button = QPushButton("Комбинаторика", self)
         combinatorics_button.setGeometry(QRect(250, 520, 280, 100))
         combinatorics_button.clicked.connect(lambda: self.open_sub_window(Combinatorics))
+
+        combinatorics_button = QPushButton("Немного из матанализа", self)
+        combinatorics_button.setGeometry(QRect(250, 620, 280, 100))
+        combinatorics_button.clicked.connect(lambda: self.open_sub_window(Calculus))
 
     def open_parent_window(self):
         self.parent_window.show()
