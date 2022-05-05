@@ -1,5 +1,9 @@
 from modules import *
 from classes.algebra.equations__.quadratic_equations import Quadratic_Equations
+from classes.algebra.equations__.biquadratic import Biquadratic
+from classes.algebra.equations__.linear_equation import Linear
+from classes.algebra.equations__.cubic_equation import Cubic_Equation
+from classes.algebra.equations__.system_of_linear_equations import System
 
 class Equations(QWidget):
     def __init__(self, parent_window):
@@ -18,6 +22,22 @@ class Equations(QWidget):
         quadratic_equations_button = QPushButton("Квадратные уравнения", self)
         quadratic_equations_button.setGeometry(QRect(250, 120, 280, 100))
         quadratic_equations_button.clicked.connect(lambda: self.open_sub_window(Quadratic_Equations))
+
+        button = QPushButton("Биквадратные уравнения", self)
+        button.setGeometry(QRect(250, 220, 280, 100))
+        button.clicked.connect(lambda: self.open_sub_window(Biquadratic))
+
+        button = QPushButton("Линейные уравнения", self)
+        button.setGeometry(QRect(250, 320, 280, 100))
+        button.clicked.connect(lambda: self.open_sub_window(Linear))
+
+        button = QPushButton("Кубические уравнения", self)
+        button.setGeometry(QRect(250, 420, 280, 100))
+        button.clicked.connect(lambda: self.open_sub_window(Cubic_Equation))
+
+        button = QPushButton("Система линейных уравнений", self)
+        button.setGeometry(QRect(250, 520, 280, 100))
+        button.clicked.connect(lambda: self.open_sub_window(System))
 
     def open_parent_window(self):
         self.parent_window.show()
