@@ -1,5 +1,6 @@
 from modules import *
 
+
 class Quadratic_Equations(QWidget):
     def __init__(self, parent_window):
         super().__init__()
