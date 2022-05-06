@@ -28,7 +28,7 @@ class Algebra(QWidget):
         arithmetic_button.setGeometry(QRect(250, 220, 280, 100))
         arithmetic_button.clicked.connect(lambda: self.open_sub_window(Arithmetic))
 
-        equations_button = QPushButton("Уравнения", self)
+        equations_button = QPushButton("Уравнения и неравенства", self)
         equations_button.setGeometry(QRect(250, 320, 280, 100))
         equations_button.clicked.connect(lambda: self.open_sub_window(Equations))
 

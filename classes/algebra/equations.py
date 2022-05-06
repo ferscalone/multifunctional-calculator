@@ -4,6 +4,7 @@ from classes.algebra.equations__.biquadratic import Biquadratic
 from classes.algebra.equations__.linear_equation import Linear
 from classes.algebra.equations__.cubic_equation import Cubic_Equation
 from classes.algebra.equations__.system_of_linear_equations import System
+from classes.algebra.equations__.inequalities import Inequalities
 
 class Equations(QWidget):
     def __init__(self, parent_window):
@@ -38,6 +39,10 @@ class Equations(QWidget):
         button = QPushButton("Система линейных уравнений", self)
         button.setGeometry(QRect(250, 520, 280, 100))
         button.clicked.connect(lambda: self.open_sub_window(System))
+
+        button = QPushButton("Неравенства", self)
+        button.setGeometry(QRect(530, 120, 280, 100))
+        button.clicked.connect(lambda: self.open_sub_window(Inequalities))
 
     def open_parent_window(self):
         self.parent_window.show()
