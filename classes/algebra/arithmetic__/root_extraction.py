@@ -1,3 +1,5 @@
+import sympy
+
 from modules import *
 
 
@@ -14,6 +16,25 @@ class Root_Extraction(QWidget):
         back_button = QPushButton("Назад", self)
         back_button.setGeometry(QRect(250, 20, 280, 100))
         back_button.clicked.connect(self.open_parent_window)
+
+        self.a_argument = QLineEdit(self)
+        self.a_argument.setGeometry(QRect(25, 190, 50, 50))
+        self.a_argument.setValidator(QDoubleValidator(0.0, 1000000000.0, 6))
+        """notation=QDoubleValidator.StandardNotation"""
+
+        root_button = QPushButton("Показать корень", self)
+        root_button.setGeometry(QRect(250, 130, 280, 100))
+        root_button.clicked.connect(self.root)
+
+        self.svg_root = QSvgWidget(self)
+        self.svg_root.setGeometry(QRect(530, 150, 100, 20))
+
+    def root(self):
+        if self.a_argument.text() != '':
+            a = self.a_argument.text()
+            a = a.replace(",", ".")
+            a = float(a)
+            self.svg_root.load(tex2svg(latex(sympy.sqrt(a))))
 
     def open_parent_window(self):
         self.parent_window.show()

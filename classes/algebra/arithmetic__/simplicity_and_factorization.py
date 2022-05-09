@@ -1,5 +1,39 @@
 from modules import *
 
+from sympy import expand, symbols, factor
+def Factor(n):
+    Ans = []
+    d = 2
+    while d * d <= n:
+        if n % d == 0:
+            Ans.append(d)
+            n //= d
+        else:
+            d += 1
+    if n > 1:
+        Ans.append(n)
+    listik = set(Ans)
+    s = ""
+    for i in listik:
+        s += str(factor(expand(symbols(str(i)) ** (k.count(i)))))
+        s += " "
+    """s = "+".join(listik)"""
+    return s
+
+def IsPrime(n):
+    d = 2
+    while d * d <= n and n % d != 0:
+        d += 1
+    return d * d > n
+
+"""a = int(input())
+k = Factor(a) Ans
+l = set(k) 
+s = ''
+for i in l:
+    s += str(factor(expand(symbols(str(i))**(k.count(i)))))
+    s += " "
+print(s)"""
 
 class Simplicity_And_Factorization(QWidget):
     def __init__(self, parent_window):
