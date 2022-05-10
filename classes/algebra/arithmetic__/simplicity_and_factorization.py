@@ -1,15 +1,6 @@
 from modules import *
 from sympy import expand, symbols, factor
 
-"""a = int(input())
-k = Factor(a) Ans
-l = set(k) 
-s = ''
-for i in l:
-    s += str(factor(expand(symbols(str(i))**(k.count(i)))))
-    s += " "
-print(s)"""
-
 class Simplicity_And_Factorization(QWidget):
     def __init__(self, parent_window):
         super().__init__()
