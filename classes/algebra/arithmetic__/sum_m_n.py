@@ -1,5 +1,3 @@
-import sympy
-
 from modules import *
 
 

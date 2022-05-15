@@ -17,11 +17,11 @@ class Exponentiation(QWidget):
 
         self.a = QLineEdit(self)
         self.a.setGeometry(QRect(25, 190, 50, 50))
-        self.a.setValidator(QDoubleValidator(0.0, 1000000000.0, 6))
+        self.a.setValidator(QDoubleValidator(0.0, 10000.0, 6))
 
         self.b = QLineEdit(self)
         self.b.setGeometry(QRect(75, 190, 50, 50))
-        self.b.setValidator(QDoubleValidator(0.0, 1000000000.0, 6))
+        self.b.setValidator(QDoubleValidator(0.0, 100.0, 6))
 
         root_button = QPushButton("Показать степень (сначала возводимое число, потом степень)", self)
         root_button.setGeometry(QRect(250, 130, 280, 100))
