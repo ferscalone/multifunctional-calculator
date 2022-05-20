@@ -37,13 +37,13 @@ class Biquadratic(QWidget):
         self.svg_1.setGeometry(QRect(10, 10, 100, 50))
 
         self.svg_2 = QSvgWidget(self)
-        self.svg_2.setGeometry(QRect(10, 110, 100, 50))
+        self.svg_2.setGeometry(QRect(10, 60, 100, 50))
 
         self.svg_3 = QSvgWidget(self)
-        self.svg_3.setGeometry(QRect(10, 210, 100, 50))
+        self.svg_3.setGeometry(QRect(110, 10, 100, 50))
 
         self.svg_4 = QSvgWidget(self)
-        self.svg_4.setGeometry(QRect(10, 310, 100, 50))
+        self.svg_4.setGeometry(QRect(110, 60, 100, 50))
 
     def display_solution(self):
         if self.a_argument.text() != '' and self.a_argument.text() != '0' and self.b_argument.text() != '' and self.c_argument.text() != '':
@@ -55,12 +55,16 @@ class Biquadratic(QWidget):
             if D < 0:
                 self.svg_1.close()
                 self.svg_2.close()
+                self.svg_3.close()
+                self.svg_4.close()
                 self.solution_label.setText("РЕШЕНИЙ НЕТ")
                 self.solution_label.show()
 
             elif D == 0:
                 """solution = sympy.simplify(-b / (2 * a))"""
                 t = -b/(2*a)
+                self.svg_3.close()
+                self.svg_4.close()
                 if t >= 0:
                     x1 = -sympy.sqrt(t)
                     x2 = sympy.sqrt(t)
@@ -81,23 +85,42 @@ class Biquadratic(QWidget):
                 """t_11 = (-b + math.sqrt(D)) / (2 * a)
                 t_22 = (-b - math.sqrt(D)) / (2 * a)"""
 
-                if t_11 >= 0:
+                if t_11 >= 0 and t_22 >= 0:
+                    x1 = -sympy.sqrt(t_11)
+                    x2 = sympy.sqrt(t_11)
+                    x3 = -sympy.sqrt(t_22)
+                    x4 = sympy.sqrt(t_22)
+                    self.solution_label.close()
+                    self.svg_1.load(tex2svg(latex(x1)))
+                    self.svg_2.load(tex2svg(latex(x2)))
+                    self.svg_3.load(tex2svg(latex(x3)))
+                    self.svg_4.load(tex2svg(latex(x4)))
+                    self.svg_1.show()
+                    self.svg_2.show()
+                    self.svg_3.show()
+                    self.svg_4.show()
+
+                if t_22 >= 0 and t_11 < 0:
+                    x1 = -sympy.sqrt(t_22)
+                    x2 = sympy.sqrt(t_22)
+                    self.solution_label.close()
+                    self.svg_1.load(tex2svg(latex(x1)))
+                    self.svg_2.load(tex2svg(latex(x2)))
+                    self.svg_3.close()
+                    self.svg_4.close()
+                    self.svg_1.show()
+                    self.svg_2.show()
+
+                if t_11 >= 0 and t_22 < 0:
                     x1 = -sympy.sqrt(t_11)
                     x2 = sympy.sqrt(t_11)
                     self.solution_label.close()
                     self.svg_1.load(tex2svg(latex(x1)))
                     self.svg_2.load(tex2svg(latex(x2)))
+                    self.svg_3.close()
+                    self.svg_4.close()
                     self.svg_1.show()
                     self.svg_2.show()
-
-                if t_22 >= 0:
-                    x3 = -sympy.sqrt(t_22)
-                    x4 = sympy.sqrt(t_22)
-                    self.solution_label.close()
-                    self.svg_3.load(tex2svg(latex(x3)))
-                    self.svg_4.load(tex2svg(latex(x4)))
-                    self.svg_3.show()
-                    self.svg_4.show()
 
                 if t_22 < 0 and t_11 < 0:
                     self.svg_1.close()

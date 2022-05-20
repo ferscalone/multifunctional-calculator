@@ -13,7 +13,7 @@ class Quadratic_Equations(QWidget):
 
         x_2_pixmap = QPixmap("./images/x^2.svg")
         x_2 = QLabel(self)
-        x_2.setGeometry(QRect(0, 50, 50, 50))
+        x_2.setGeometry(QRect(0, 190, 50, 50))
         x_2.setPixmap(x_2_pixmap)
 
         display_solution_button = QPushButton("Показать решение", self)

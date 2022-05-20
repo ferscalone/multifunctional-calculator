@@ -41,13 +41,13 @@ class Algebra(QWidget):
         combinatorics_button.setGeometry(QRect(250, 520, 280, 100))
         combinatorics_button.clicked.connect(lambda: self.open_sub_window(Combinatorics))
 
-        calculus_button = QPushButton("Немного из матанализа", self)
+        """calculus_button = QPushButton("Немного из матанализа", self)
         calculus_button.setGeometry(QRect(530, 120, 280, 100))
         calculus_button.clicked.connect(lambda: self.open_sub_window(Calculus))
 
         graphic_button = QPushButton("Построение графика функции", self)
         graphic_button.setGeometry(QRect(530, 220, 280, 100))
-        graphic_button.clicked.connect(lambda: self.open_sub_window(Graphic))
+        graphic_button.clicked.connect(lambda: self.open_sub_window(Graphic))"""
 
     def open_parent_window(self):
         self.parent_window.show()
