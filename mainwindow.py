@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
     def initUI(self):
         self.setWindowTitle("Многофункциональный калькулятор")
         self.resize(910, 850)
-        self.setWindowIcon(QIcon('images/background.jpg'))
+        self.setWindowIcon(QIcon('images/icon.jpg'))
 
         algebra_button = QPushButton("Алгебра", self)
         algebra_button.setGeometry(QRect(250, 130, 280, 100))
