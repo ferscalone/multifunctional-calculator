@@ -19,11 +19,11 @@ class MainWindow(QMainWindow):
         algebra_button.setGeometry(QRect(250, 130, 280, 100))
         algebra_button.clicked.connect(lambda: self.open_sub_window(Algebra))
 
-        """geometry_button = QPushButton("Геометрия", self)
+        geometry_button = QPushButton("Геометрия", self)
         geometry_button.setGeometry(QRect(250, 230, 280, 100))
-        geometry_button.clicked.connect(lambda: self.open_sub_window(Geometry))"""
+        geometry_button.clicked.connect(lambda: self.open_sub_window(Geometry))
 
-        """trigonometry_button = QPushButton("Тригонометрические функции", self)
+        trigonometry_button = QPushButton("Тригонометрические функции", self)
         trigonometry_button.setGeometry(QRect(250, 330, 280, 100))
         trigonometry_button.clicked.connect(lambda: self.open_sub_window(Trigonometry))
 
@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
 
         physics_button = QPushButton("Физика", self)
         physics_button.setGeometry(QRect(250, 530, 280, 100))
-        physics_button.clicked.connect(lambda: self.open_sub_window(Physics))"""
+        physics_button.clicked.connect(lambda: self.open_sub_window(Physics))
 
         menu_label = QLabel("Меню", self)
         menu_label.setGeometry(QRect(250, 60, 50, 100))

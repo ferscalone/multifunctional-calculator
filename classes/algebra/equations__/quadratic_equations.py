@@ -38,15 +38,15 @@ class Quadratic_Equations(QWidget):
 
         self.a_argument = QLineEdit(self)
         self.a_argument.setGeometry(QRect(25, 190, 50, 50))
-        self.a_argument.setValidator(QIntValidator(1, 1000000000, self))
+        self.a_argument.setValidator(QIntValidator(-1000000000, 1000000000, self))
 
         self.b_argument = QLineEdit(self)
         self.b_argument.setGeometry(QRect(75, 190, 50, 50))
-        self.b_argument.setValidator(QIntValidator(1, 1000000000, self))
+        self.b_argument.setValidator(QIntValidator(-1000000000, 1000000000, self))
 
         self.c_argument = QLineEdit(self) 
         self.c_argument.setGeometry(QRect(125, 190, 50, 50))
-        self.c_argument.setValidator(QIntValidator(1, 1000000000, self))
+        self.c_argument.setValidator(QIntValidator(-1000000000, 1000000000, self))
         
         self.svg_1 = QSvgWidget(self)
         self.svg_1.setGeometry(QRect(10, 10, 100, 50))
@@ -55,7 +55,7 @@ class Quadratic_Equations(QWidget):
         self.svg_2.setGeometry(QRect(10, 110, 100, 50))
 
     def display_solution(self):
-        if self.a_argument.text() != '' and self.b_argument.text() != '' and self.c_argument.text() != '':
+        if self.a_argument.text() != '' and self.a_argument.text() != '0' and self.b_argument.text() != '' and self.c_argument.text() != '':
             a = int(self.a_argument.text())
             b = int(self.b_argument.text())
             c = int(self.c_argument.text())
