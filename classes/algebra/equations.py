@@ -36,13 +36,13 @@ class Equations(QWidget):
         button.setGeometry(QRect(250, 420, 280, 100))
         button.clicked.connect(lambda: self.open_sub_window(Cubic_Equation))
 
-        button = QPushButton("Система линейных уравнений", self)
+        """button = QPushButton("Система линейных уравнений", self)
         button.setGeometry(QRect(250, 520, 280, 100))
         button.clicked.connect(lambda: self.open_sub_window(System))
 
         button = QPushButton("Неравенства", self)
         button.setGeometry(QRect(530, 120, 280, 100))
-        button.clicked.connect(lambda: self.open_sub_window(Inequalities))
+        button.clicked.connect(lambda: self.open_sub_window(Inequalities))"""
 
     def open_parent_window(self):
         self.parent_window.show()
