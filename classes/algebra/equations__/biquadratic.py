@@ -14,21 +14,25 @@ class Biquadratic(QWidget):
         x_2_pixmap = QPixmap("./images/x^2.svg")
         plus1_pixmap = QPixmap("./images/plus.svg")
         plus2_pixmap = QPixmap("./images/plus.svg")
+        eq0_pixmap = QPixmap("./images/eq0.svg")
 
         x_4 = QLabel(self)
         x_2 = QLabel(self)
         plus1 = QLabel(self)
         plus2 = QLabel(self)
+        eq0 = QLabel(self)
 
         x_4.setGeometry(QRect(50, 190, 50, 50))
         x_2.setGeometry(QRect(140, 190, 50, 50))
         plus1.setGeometry(QRect(70, 190, 50, 50))
         plus2.setGeometry(QRect(160, 190, 50, 50))
+        eq0.setGeometry(QRect(220, 190, 50, 50))
 
         x_4.setPixmap(x_4_pixmap)
         x_2.setPixmap(x_2_pixmap)
         plus1.setPixmap(plus1_pixmap)
         plus2.setPixmap(plus2_pixmap)
+        eq0.setPixmap(eq0_pixmap)
 
         back_button = QPushButton("Назад", self)
         back_button.setGeometry(QRect(250, 20, 280, 100))

@@ -32,9 +32,9 @@ class Equations(QWidget):
         button.setGeometry(QRect(250, 320, 280, 100))
         button.clicked.connect(lambda: self.open_sub_window(Linear))
 
-        button = QPushButton("Кубические уравнения", self)
+        """button = QPushButton("Кубические уравнения", self)
         button.setGeometry(QRect(250, 420, 280, 100))
-        button.clicked.connect(lambda: self.open_sub_window(Cubic_Equation))
+        button.clicked.connect(lambda: self.open_sub_window(Cubic_Equation))"""
 
         """button = QPushButton("Система линейных уравнений", self)
         button.setGeometry(QRect(250, 520, 280, 100))
