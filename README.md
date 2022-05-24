@@ -1,4 +1,24 @@
 # Мультифункциональный калькулятор
+https://docs.google.com/document/d/1egChA5aElpJBIpS4fqBSFxkuUa8BSlkB/edit?usp=sharing&ouid=115739896948301802554&rtpof=true&sd=true
+https://docs.google.com/presentation/d/1CsiQPwrP3mk8YIVC3EMHJFsLEk_I03j7/edit?usp=sharing&ouid=115739896948301802554&rtpof=true&sd=true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Итоговый проект по информатике
 - [ ] Доделать биквадратики (чтобы нормально закрывал ненужные svg-окна при нажимании кнопки, подправить расположение окон, вывод с использованием +/-)
 - [ ] QIntValidator в простом квадратик, поставить чтобы принимал отрицательные числа и поработать с нулём
