@@ -16,11 +16,11 @@ class Progressions(QWidget):
         back_button.setGeometry(QRect(250, 20, 280, 100))
         back_button.clicked.connect(self.open_parent_window)
 
-        button = QPushButton("Арифметические прогрессии", self)
+        button = QPushButton("Сумма арифметической прогрессии", self)
         button.setGeometry(QRect(250, 120, 280, 100))
         button.clicked.connect(lambda: self.open_sub_window(Arithmetic))
 
-        button = QPushButton("Геометрические прогрессии", self)
+        button = QPushButton("Сумма геометрической прогрессии", self)
         button.setGeometry(QRect(250, 220, 280, 100))
         button.clicked.connect(lambda: self.open_sub_window(Geometric))
 

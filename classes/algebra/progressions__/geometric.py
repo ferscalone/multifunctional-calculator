@@ -24,7 +24,7 @@ class Geometric(QWidget):
         self.c_argument.setValidator(QIntValidator(-1000000000, 1000000000, self))
 
         self.svg_1 = QSvgWidget(self)
-        self.svg_1.setGeometry(QRect(10, 10, 100, 50))
+        self.svg_1.setGeometry(QRect(10, 10, 200, 100))
 
         a_label = QLabel("b1", self)
         a_label.setGeometry(QRect(10, 130, 50, 100))

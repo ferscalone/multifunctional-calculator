@@ -48,7 +48,7 @@ class Combinations(QWidget):
         back_button.clicked.connect(self.open_parent_window)
 
         self.svg = QSvgWidget(self)
-        self.svg.setGeometry(QRect(10, 10, 100, 50))
+        self.svg.setGeometry(QRect(10, 10, 200, 100))
 
     def display_solution(self):
         if self.b_argument.text() != '' and int(self.b_argument.text()) != 0 and self.c_argument.text() != '':
